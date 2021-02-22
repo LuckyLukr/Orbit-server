@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-const uri = 'mongodb+srv://Lukr:Langeer425401477@taskappcluster.96ojv.mongodb.net/ORBIT_DB?retryWrites=true&w=majority';
+const uri = process.env.MONGODB_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const connection = mongoose.connection;
